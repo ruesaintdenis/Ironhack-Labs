@@ -1,0 +1,87 @@
+1. From the client table, what are the ids of the first 5 clients from disrict_id 1?
+
+Client IDs: 2, 3, 22, 23, 28 all from district 1 
+
+2. From the client table, what is the id of the last client from district_id 72?
+
+Client ID:13576
+
+3. From the loan table, what are the 3 lowest amounts?
+4980
+5148
+7656
+
+4. From the loan table, what are the possible values for status, ordered alphabetically in ascending order?
+
+I'm not sure, the risk of the loan?
+
+5. From the loans table, what is the loan_id of the highest payment received?
+
+6415
+
+6. From the loans table, what is the loan amount of the lowest 5 account_ids. Show the account_id and the corresponding amount?
+
+account # Amount
+2	80952
+19	30276
+25	30276
+37	318480
+38	110736
+
+7. From the loans table, which are the account_ids with the lowest loan amount have a loan duration of 60?
+duration amount account_id
+60	18720	10954
+60	22260	938
+60	24180	10711
+60	30060	1766
+60	31140	10799
+60	31620	9677
+60	49440	2352
+
+8. From the order table, what are the unique values of k_symbol?
+
+SIPO
+UVER
+ 
+POJISTNE
+LEASING
+
+9. From the order table, which are the order_ids from the client with the account_id34?
+order # account #
+29445	34
+29446	34
+29447	34
+
+10. From the order table, which account_ids were responsible for orders between order_id 29540 and order_id 29560 (inclusive)?
+order # account #
+29541	88
+29542	90
+29543	90
+29544	90
+29545	90
+29554	96
+29555	96
+29556	96
+29557	96
+29558	96
+29559	97
+29560	97
+
+11. From the order table, what are the individual amounts that were sent to (account_to) id 30067122?
+
+5123
+
+12. From the trans table, show the trans_id, date, type and amount of the 10 first transactions 
+from account_id = 793 in chronological order, from newest to oldest.
+
+trans # date    type    amount
+3556468	981231	PRIJEM	78.6
+3556467	981130	PRIJEM	75.1
+3556466	981031	PRIJEM	70.2
+3556465	980930	PRIJEM	65.4
+3556464	980831	PRIJEM	62.1
+3556463	980731	PRIJEM	61.2
+3556462	980630	PRIJEM	56.4
+3556461	980531	PRIJEM	54.9
+3556460	980430	PRIJEM	63.8
+3556459	980331	PRIJEM	61.6
