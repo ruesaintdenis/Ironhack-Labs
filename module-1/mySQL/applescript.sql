@@ -1,0 +1,10 @@
+SELECT * FROM applestore.apple;
+select distinct prime_genre as Genre from apple; 
+select rating_count_tot, prime_genre from apple order by rating_count_tot DESC; 
+SELECT prime_genre, count(prime_genre) FROM apple GROUP by prime_genre order by count(prime_genre) DESC; 
+SELECT prime_genre, count(prime_genre) FROM apple GROUP by prime_genre order by count(prime_genre) ASC; 
+select rating_count_tot, track_name from apple order by rating_count_tot DESC; 
+select track_name, user_rating,  rating_count_tot from apple order by user_rating desc, rating_count_tot desc; 
+select * from apple order by rating_count_tot DESC; 
+select * from apple order by user_rating desc, rating_count_tot desc; 
+select count(*) from apple where price >0; 
