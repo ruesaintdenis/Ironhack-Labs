@@ -1,0 +1,88 @@
+1. What are the different genres?
+
+Games
+Productivity
+Weather
+Shopping
+Reference
+Finance
+Music
+Utilities
+Travel
+Social Networking
+Sports
+Business
+Health & Fitness
+Entertainment
+Photo & Video
+Navigation
+Education
+Lifestyle
+Food & Drink
+News
+Book
+Medical
+Catalogs
+
+2. Which is the genre with the most apps rated?
+
+2974676	Social Networking
+
+3. Which is the genre with most apps?
+
+Games	3862
+
+4. Which is the one with least?
+
+Catalogs	10
+
+5. Find the top 10 apps most rated.
+
+2974676	Facebook
+2161558	Instagram
+2130805	Clash of Clans
+1724546	Temple Run
+1126879	Pandora - Music & Radio
+1061624	Pinterest
+985920	Bible
+961794	Candy Crush Saga
+878563	Spotify Music
+824451	Angry Birds
+
+6. Find the top 10 apps best rated by users.
+
+Head Soccer	5	481564
+Plants vs. Zombies	5	426463
+Sniper 3D Assassin: Shoot to Kill Gun Game	5	386521
+Geometry Dash Lite	5	370370
+Infinity Blade	5	326482
+Geometry Dash	5	266440
+Domino's Pizza USA	5	258624
+CSR Racing 2	5	257100
+Pictoword: Fun 2 Pics Guess What's the Word Trivia	5	186089
+Plants vs. Zombies HD	5	163598
+
+7. Take a look at the data you retrieved in question 5. Give some insights.
+
+All of the most rated apps are free, and the range of amount rated is quite high, ranging from 83k users to 3 million users. 
+Only 2 apps were only offered in 1 language, and the other 8 were offered in 10 or more languages. The most frequent genre is Games, 
+which is aligned with the answer in Question 3, and then it's Social Media and Music, followed by Photography and Reference. 
+
+8. Take a look at the data you retrieved in question 6. Give some insights.
+
+Not all of the apps are free, with 4/10 being paid apps. All but 1 are classified as games, and only 3 are offered in 10 languages or more. 
+The range of the amount of rating is less than in the previous question, ranging from 16k-48k. 
+
+9. Now compare the data from questions 5 and 6. What do you see?
+
+None of the most rated are the best rated. 
+
+10. How could you take the top 3 regarding both user ratings and number of votes?
+
+Well, since I sorted by both rating and number of votes, I think it accurately represents the apps that most users love the most. 
+
+11. Do people care about the price of an app? Do some queries, comment why are you doing them and the results you retrieve. What is your conclusion?
+
+To determine if users were happy, I decided to look at the percentage of apps that were rated 4 or above when they were free compared
+to when they were paid apps. It seems paid apps are more likely to be rated 4 or above, with 46% of paid apps being rated 4 or above, 
+compared to only 42% of free apps. However, it is unknown whether this difference is significant.  

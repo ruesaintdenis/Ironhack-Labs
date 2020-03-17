@@ -1,6 +1,6 @@
 SELECT * FROM applestore.apple;
 select distinct prime_genre as Genre from apple; 
-select rating_count_tot, prime_genre from apple order by rating_count_tot DESC; 
+select rating_count_tot, prime_genre from apple group by prime_genre order by rating_count_tot DESC limit 1; 
 SELECT prime_genre, count(prime_genre) FROM apple GROUP by prime_genre order by count(prime_genre) DESC; 
 SELECT prime_genre, count(prime_genre) FROM apple GROUP by prime_genre order by count(prime_genre) ASC; 
 select rating_count_tot, track_name from apple order by rating_count_tot DESC; 
