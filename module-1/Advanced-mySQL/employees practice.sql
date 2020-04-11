@@ -65,4 +65,30 @@ select count(distinct dept_no) from dept_emp;
 
 select round(avg(salary), 2) from salaries where from_date > '1997-01-01'; 
 
+CREATE TABLE departments_dup 
+( 
+    dept_no CHAR(4) NULL, 
+    dept_name VARCHAR(40) NULL 
+); 
+  
+INSERT INTO departments_dup 
+( 
+    dept_no, 
+    dept_name 
+)
+SELECT * 
+FROM 
+                departments; 
+  
+INSERT INTO departments_dup (dept_name) 
+VALUES                ('Public Relations'); 
+  
+DELETE FROM departments_dup 
+WHERE 
+    dept_no = 'd002';  
+    
+INSERT INTO departments_dup(dept_no) VALUES ('d010'), ('d011');
+
+
+
 select min(emp_no), max(emp_no) from employees; 
