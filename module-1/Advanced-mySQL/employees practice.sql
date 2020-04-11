@@ -60,3 +60,9 @@ values(
 'M',
 '1990-06-01'
 );
+
+select count(distinct dept_no) from dept_emp; 
+
+select round(avg(salary), 2) from salaries where from_date > '1997-01-01'; 
+
+select min(emp_no), max(emp_no) from employees; 
