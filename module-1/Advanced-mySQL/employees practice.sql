@@ -89,6 +89,76 @@ WHERE
     
 INSERT INTO departments_dup(dept_no) VALUES ('d010'), ('d011');
 
-
+DROP TABLE IF EXISTS dept_manager_dup;
+CREATE TABLE dept_manager_dup (
+  emp_no int(11) NOT NULL,
+  dept_no char(4) NULL,
+  from_date date NOT NULL,
+  to_date date NULL
+  );
+ 
+INSERT INTO dept_manager_dup
+select * from dept_manager;
+ 
+INSERT INTO dept_manager_dup (emp_no, from_date)
+VALUES                (999904, '2017-01-01'),
+                                (999905, '2017-01-01'),
+                               (999906, '2017-01-01'),
+                               (999907, '2017-01-01');
+ 
+DELETE FROM dept_manager_dup
+WHERE
+    dept_no = 'd001';
+INSERT INTO departments_dup (dept_name)
+VALUES                ('Public Relations');
+ 
+DELETE FROM departments_dup
+WHERE
+    dept_no = 'd002';
 
 select min(emp_no), max(emp_no) from employees; 
+
+select m.dept_no, m.emp_no, d.dept_name
+from dept_manager_dup m
+inner join departments_dup d on m.dept_no = d.dept_no
+order by m.dept_no; 
+
+select e.first_name, e.last_name, e.hire_date, m.emp_no, m.dept_no
+from employees e 
+left join dept_manager m on e.emp_no = m.emp_no
+where e.last_name = 'Markovitch'
+order by m.dept_no desc, e.emp_no;  
+
+select m.emp_no, e.first_name, e.last_name, m.dept_no, e.hire_date
+from employees e, dept_manager m 
+where e.emp_no = m.emp_no; 
+
+set @@global.sql_mode := replace(@@global.sql_mode, 'ONLY_FULL_GROUP_BY', '');
+
+select e.first_name, e.last_name, e.hire_date, e.emp_no, t.title
+from employees e
+join titles t on e.emp_no = t.emp_no
+where e.first_name = 'Margareta' and e.last_name = 'Markovitch'; 
+
+select m.*, d.*
+from departments d
+cross join
+dept_manager m 
+where d.dept_no = 'd009'; 
+
+select e.*, d.*
+from departments d
+cross join
+employees e 
+where e.emp_no < 10011;
+
+select e.first_name, e.last_name, e.hire_date, t.title, dm.from_date, d.dept_name
+from employees e
+join 
+titles t on e.emp_no = t.emp_no
+join
+dept_manager dm on t.emp_no = dm.emp_no
+join 
+departments d on d.dept_no = dm.dept_no; 
+join
+
