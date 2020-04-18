@@ -260,3 +260,45 @@ FROM
   select round(avg(s.salary),2)
   from salaries s
   join dept_manager dm on dm.emp_no = s.emp_no; 
+
+  
+drop procedure if exists select_employees;
+
+delimiter $$
+  create procedure select_employees()
+  begin 
+  select * from employees.employees
+  limit 1000;
+  end$$
+  
+  delimiter ; 
+  
+  call employees.select_employees();
+  
+  drop procedure if exists avg_salary;
+
+delimiter $$
+  create procedure avg_salary()
+  begin 
+  select e.emp_no, avg(s.salary), e.first_name, e.last_name
+  from employees e 
+  join salaries s on e.emp_no = s.emp_no
+  group by emp_no; 
+  end$$
+  
+  delimiter ; 
+  
+  call employees.avg_salary();
+ delimiter $$ 
+create procedure emp_avg_salary(in p_emp_no int)
+  begin 
+  select e.emp_no, avg(s.salary), e.first_name, e.last_name
+  from employees e 
+  join salaries s on e.emp_no = s.emp_no
+  where 
+  e.emp_no = p_emp_no;
+  end$$
+  
+  delimiter ; 
+  
+  call emp_avg_salary(11000);
