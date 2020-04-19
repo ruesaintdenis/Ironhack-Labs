@@ -302,3 +302,23 @@ create procedure emp_avg_salary(in p_emp_no int)
   delimiter ; 
   
   call emp_avg_salary(11000);
+  
+  select e.emp_no, e.first_name, e.last_name, 
+  case 
+  when e.emp_no = dm.emp_no then 'Manager'
+  Else 'Employee'
+  end as status
+  from employees e
+  left join dept_manager dm on  dm.emp_no = e.emp_no
+  where e.emp_no> 109990; 
+  
+  select e.emp_no, e.first_name, e.last_name, max(de.to_date),
+  case 
+  when max(de.to_date) > '2020-04-18' then 'Still employeed'
+  else 'not currently employeed'
+  end as status
+  from employees e
+  join dept_emp de on e.emp_no = de.emp_no
+ group by e.emp_no
+ order by e.emp_no 
+ limit 100;
